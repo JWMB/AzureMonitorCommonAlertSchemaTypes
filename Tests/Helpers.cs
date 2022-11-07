@@ -26,9 +26,10 @@ namespace Tests
                 var joined = Path.Join(dir.Remove(index), filename);
                 if (File.Exists(joined))
                     return joined;
+                throw new FileNotFoundException($"{filename} - Current dir:{Directory.GetCurrentDirectory()} (joined:'{joined}')");
             }
 
-            throw new FileNotFoundException($"{filename} - Current dir:{Directory.GetCurrentDirectory()}");
+            throw new FileNotFoundException($"{filename} - Current dir:'{Directory.GetCurrentDirectory()}' (binSearch:'{binSearch}')");
         }
     }
 }
