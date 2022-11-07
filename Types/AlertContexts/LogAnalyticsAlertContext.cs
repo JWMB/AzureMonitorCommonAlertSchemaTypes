@@ -4,6 +4,9 @@ using Types.AlertContexts.LogAlertsV2;
 
 namespace Types.AlertContexts
 {
+    /// <summary>
+    /// https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#monitoringservice--log-alerts-v1--metric
+    /// </summary>
     public class LogAnalyticsAlertContext : IAlertContext
     {
         public string[] MonitoringServiceMatches => new[] { "Log Analytics", "Application Insights" };

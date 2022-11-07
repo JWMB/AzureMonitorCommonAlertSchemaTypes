@@ -3,7 +3,7 @@
 namespace Types.AlertContexts
 {
     /// <summary>
-    /// https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#monitoringservice--servicehealth
+    /// https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#monitoringservice--smart-alert
     /// </summary>
     public class SmartAlertContext : IAlertContext
     {
