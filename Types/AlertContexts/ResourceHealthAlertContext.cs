@@ -3,7 +3,7 @@
 
     public class ResourceHealthAlertContext : HealthContextBase
     {
-        public override string[] MonitoringServices => new[] { "Resource Health" };
+        public override string[] MonitoringServiceMatches => new[] { "Resource Health" };
         public override string ToUserFriendlyString()
         {
             return $"{OperationName} {Status} {Properties.Title} {Properties.Details} {Properties.Cause}";

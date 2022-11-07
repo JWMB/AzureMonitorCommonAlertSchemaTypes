@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Shouldly;
 using Types;
+using Types.Serialization;
 
 namespace Tests
 {

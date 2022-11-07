@@ -6,7 +6,7 @@ namespace Types.AlertContexts
 {
     public class LogAnalyticsAlertContext : IAlertContext
     {
-        public string[] MonitoringServices => new[] { "Log Analytics", "Application Insights" };
+        public string[] MonitoringServiceMatches => new[] { "Log Analytics", "Application Insights" };
 
         public string OperatorToken => OperatorValues.Get(Operator);
 

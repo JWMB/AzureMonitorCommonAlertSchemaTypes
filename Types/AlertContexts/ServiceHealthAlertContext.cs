@@ -4,7 +4,7 @@ namespace Types.AlertContexts
 {
     public class ServiceHealthAlertContext : HealthContextBase
     {
-        public override string[] MonitoringServices => new[] { "ServiceHealth" };
+        public override string[] MonitoringServiceMatches => new[] { "ServiceHealth" };
         public override string ToUserFriendlyString()
         {
             return $"{OperationName} {Status} {Properties.Title} {Properties.Service} {Properties.Region} {Properties.DefaultLanguageContent}"; // {EventSource}: {OperationName} {EventTimestamp:HH:mm:ss}";

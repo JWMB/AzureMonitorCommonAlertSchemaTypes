@@ -4,7 +4,7 @@ namespace Types.AlertContexts
 {
     public abstract class HealthContextBase : IAlertContext
     {
-        public abstract string[] MonitoringServices { get; }
+        public abstract string[] MonitoringServiceMatches { get; }
 
         public abstract string ToUserFriendlyString();
 

@@ -4,7 +4,7 @@ namespace Types.AlertContexts
 {
     public class ActivityLogAlertContext : IAlertContext
     {
-        public string[] MonitoringServices => new[] { "Activity Log", "Activity Log - Administrative" };
+        public string[] MonitoringServiceMatches => new[] { "Activity Log", "Activity Log - Administrative" };
         public string ToUserFriendlyString()
         {
             return $"{EventSource}: {OperationName} {EventTimestamp:HH:mm:ss}";

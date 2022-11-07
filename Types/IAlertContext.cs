@@ -2,7 +2,7 @@
 {
     public interface IAlertContext
     {
-        string[] MonitoringServices { get; }
+        string[] MonitoringServiceMatches { get; }
         string ToUserFriendlyString();
     }
 }

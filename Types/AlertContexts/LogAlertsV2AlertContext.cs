@@ -8,7 +8,7 @@ namespace Types.AlertContexts
 {
     public class LogAlertsV2AlertContext : IAlertContext
     {
-        public string[] MonitoringServices => new[] { "Log Alerts V2", "Platform" };
+        public string[] MonitoringServiceMatches => new[] { "Log Alerts V2", "Platform" };
 
 
         public Dictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();

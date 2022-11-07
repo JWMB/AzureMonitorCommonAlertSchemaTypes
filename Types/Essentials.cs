@@ -17,6 +17,5 @@ namespace Types
         public string Description { get; set; } = string.Empty;
         public string EssentialsVersion { get; set; } = string.Empty;
         public string AlertContextVersion { get; set; } = string.Empty;
-        //public string? FormattedFiredDateTime => FiredDateTime?.ToString("yyyy-MM-dd HH:mm:ss") ?? string.Empty;
     }
 }

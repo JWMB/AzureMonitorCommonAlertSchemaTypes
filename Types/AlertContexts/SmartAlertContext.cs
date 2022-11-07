@@ -4,7 +4,7 @@ namespace Types.AlertContexts
 {
     public class SmartAlertContext : IAlertContext
     {
-        public string[] MonitoringServices => new[] { "SmartDetector" };
+        public string[] MonitoringServiceMatches => new[] { "SmartDetector" };
 
         public string ToUserFriendlyString()
         {
