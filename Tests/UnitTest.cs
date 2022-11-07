@@ -29,7 +29,7 @@ namespace Tests
         [Fact]
         public void Deserialize_LogAlertsV2()
         {
-            var alert = Helpers.DeserializeFile("Json/Platform.json");
+            var alert = Helpers.DeserializeFile("Json/platform.json");
 
             alert.Data.Essentials.SignalType.ShouldBe("Log");
             alert.Data.Essentials.MonitoringService.ShouldBe("Platform");
