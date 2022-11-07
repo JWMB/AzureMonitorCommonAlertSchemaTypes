@@ -28,7 +28,7 @@ namespace Tests
                     return joined;
             }
 
-            throw new FileNotFoundException(filename);
+            throw new FileNotFoundException($"{filename} - Current dir:{Directory.GetCurrentDirectory()}");
         }
     }
 }
