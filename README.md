@@ -1,9 +1,24 @@
 [![.NET](https://github.com/JWMB/AzureMonitorCommonAlertSchemaTypes/actions/workflows/dotnet.yml/badge.svg)](https://github.com/JWMB/AzureMonitorCommonAlertSchemaTypes/actions/workflows/dotnet.yml)
 
 # AzureMonitorCommonAlertSchemaTypes
-Library with types and serializing utils for azureMonitorCommonAlertSchema
+A `.NETStandard 2.1` library with types and serializing utils for [azureMonitorCommonAlertSchema](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-definitions)
 
 *Work in progress*
+
+## Supported variations
+(Auto-generated information)
+<!-- BEGIN:Variants -->
+* ActivityLogAlertContext
+* LogAlertsV2AlertContext
+	* DynamicThresholdCriteria
+	* LogQueryCriteriaCondition
+	* SingleResourceMultipleMetricCriteria
+	* WebtestLocationAvailabilityCriteria
+* LogAnalyticsAlertContext
+* ResourceHealthAlertContext
+* ServiceHealthAlertContext
+* SmartAlertContext
+<!-- END:Variants -->
 
 No type information seems to be provided by Microsoft for handling alert payloads - no JSON Schema and no .NET type library. This library is built on guesswork based on various example payloads.
 

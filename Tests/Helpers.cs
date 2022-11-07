@@ -16,21 +16,38 @@ namespace Tests
 
         public static string ResolveFilename(string filename)
         {
-            if (File.Exists(filename))
-                return filename;
+            var currentDir = new DirectoryInfo(Directory.GetCurrentDirectory());
+            var found = GetFullnameIfExists(filename, currentDir);
+            if (found != null)
+                return found;
 
-            var binSearch = $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}";
-            var dir = Directory.GetCurrentDirectory();
-            var index = dir.LastIndexOf(binSearch);
-            if (index > 0)
+            while (currentDir != null)
             {
-                var joined = Path.Join(dir.Remove(index), filename);
-                if (File.Exists(joined))
-                    return joined;
-                throw new FileNotFoundException($"{filename} - Current dir:{Directory.GetCurrentDirectory()} (joined:'{joined}')");
+                if (currentDir.Name == "bin" && currentDir.Parent != null)
+                {
+                    found = GetFullnameIfExists(filename, currentDir.Parent);
+                    if (found != null)
+                        return found;
+                }
+                currentDir = currentDir.Parent;
             }
+            //var binSearch = $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}";
+            //var index = currentDir.FullName.LastIndexOf(binSearch);
+            //if (index > 0)
+            //{
+            //    var joined = Path.Join(currentDir.FullName.Remove(index), filename);
+            //    if (File.Exists(joined))
+            //        return joined;
+            //    throw new FileNotFoundException($"{filename} - Current dir:{Directory.GetCurrentDirectory()} (joined:'{joined}')");
+            //}
 
-            throw new FileNotFoundException($"{filename} - Current dir:'{Directory.GetCurrentDirectory()}' (binSearch:'{binSearch}')");
+            throw new FileNotFoundException($"{filename} - Current dir:'{Directory.GetCurrentDirectory()}'"); // (binSearch:'{binSearch}')");
+        }
+
+        private static string? GetFullnameIfExists(string filepath, DirectoryInfo dir)
+        {
+            var result = new FileInfo(Path.Join(dir.FullName, filepath));
+            return result.Exists ? result.FullName : null;
         }
     }
 }

@@ -10,21 +10,15 @@ namespace Types.Serialization
     public abstract class CovariantConverter<TAncestorWithCovariantTypeId, TVariant> : JsonConverter<TAncestorWithCovariantTypeId>
     {
         private Dictionary<string, Type>? idToType;
+
         private void InitializeIdToType(Func<TVariant, string[]> getVariantNameMatches)
         {
-            var baseType = typeof(TVariant);
-            var isArray = baseType.IsArray;
-            if (isArray)
-            {
-                baseType = baseType.GetElementType();
-            }
-            var types = baseType.Assembly.GetExportedTypes()
-                .Where(t => baseType.IsAssignableFrom(t) && !t.IsAbstract);
+            var types = TypeHelper.GetTypesDerivedFrom(typeof(TVariant));
 
             idToType = types
                 .Select(t =>
                 {
-                    if (isArray)
+                    if (typeof(TVariant).IsArray)
                     {
                         var inst = Activator.CreateInstance(t);
                         var arr = Array.CreateInstance(t, 1);

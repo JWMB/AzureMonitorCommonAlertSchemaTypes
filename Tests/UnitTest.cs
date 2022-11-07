@@ -43,7 +43,7 @@ namespace Tests
 
             typed.Condition.AllOf.ShouldNotBeEmpty();
 
-            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.LogQueryCriteriaCondition[] conditions)
+            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.LogQueryCriteria[] conditions)
                 throw new Exception($"{nameof(typed.Condition.AllOf)} is {typed.Condition.AllOf.GetType().Name}");
 
             conditions.Single().SearchQuery.ShouldBe("Heartbeat");

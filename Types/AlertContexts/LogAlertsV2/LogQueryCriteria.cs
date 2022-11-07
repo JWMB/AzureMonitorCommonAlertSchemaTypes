@@ -2,7 +2,7 @@
 
 namespace Types.AlertContexts.LogAlertsV2
 {
-    public class LogQueryCriteriaCondition : IConditionPart
+    public class LogQueryCriteria : IConditionPart
     {
         public string[] ConditionTypeMatch => new[] { "LogQueryCriteria" };
 
