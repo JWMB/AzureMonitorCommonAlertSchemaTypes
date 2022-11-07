@@ -9,12 +9,26 @@ namespace Tests
         public static Alert Deserialize(string str)
         {
             return AlertJsonSerializerSettings.DeserializeOrThrow(str);
-            //var alert = JsonConvert.DeserializeObject<Alert>(str, new AlertJsonSerializerSettings());
-            //alert.ShouldNotBeNull();
-            //return alert;
         }
 
-        public static Alert DeserializeFile(string filename) => Deserialize(File.ReadAllText(filename));
+        public static Alert DeserializeFile(string filename) => Deserialize(File.ReadAllText(ResolveFilename(filename)));
 
+        public static string ResolveFilename(string filename)
+        {
+            if (File.Exists(filename))
+                return filename;
+
+            var binSearch = $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}";
+            var dir = Directory.GetCurrentDirectory();
+            var index = dir.LastIndexOf(binSearch);
+            if (index > 0)
+            {
+                var joined = Path.Join(dir.Remove(index), filename);
+                if (File.Exists(joined))
+                    return joined;
+            }
+
+            throw new FileNotFoundException(filename);
+        }
     }
 }

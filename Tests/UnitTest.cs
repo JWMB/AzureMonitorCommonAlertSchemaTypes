@@ -68,9 +68,9 @@ namespace Tests
 
         private Alert DeserializeAlertContextFile(string filename, string monitoringService)
         {
-            var str = File.ReadAllText(filename);
+            var str = File.ReadAllText(Helpers.ResolveFilename(filename));
             str = WrapAlertContext(str, monitoringService);
-            return Helpers.Deserialize(str);
+            return AlertJsonSerializerSettings.DeserializeOrThrow(str);
         }
 
         private string WrapAlertContext(string alertContext, string monitoringService)
