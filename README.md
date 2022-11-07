@@ -20,7 +20,7 @@ Also overall design principles seem lacking.
 * LogAlertsV2AlertContext
 	* DynamicThresholdCriteria
 	* LogQueryCriteria
-	* SingleResourceMultipleMetricCriteria
+	* SingleResourceMultipleMetricCriteria - [example](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#metric-alerts---static-threshold)
 	* WebtestLocationAvailabilityCriteria
 * LogAnalyticsAlertContext
 * ResourceHealthAlertContext

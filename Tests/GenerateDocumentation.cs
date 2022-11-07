@@ -12,22 +12,15 @@ namespace Tests
         [Fact]
         public void ListContexts()
         {
-            var str = string.Join("\n", TraverseImplementations(typeof(IAlertContext), ""));
+            var baseType = typeof(IAlertContext);
+            XmlDocTools.LoadXmlDocumentation(baseType.Assembly);
+
+            var str = string.Join("\n", TraverseImplementations(baseType, ""));
 
             var filename = Helpers.ResolveFilename("../README.md");
             var readme = File.ReadAllText(filename);
             if (ReplaceSection(readme, "Variants", str, out var replaced))
                 File.WriteAllText(filename, replaced);
-
-            /*
-- name: README
-      run: |        
-        dotnet run --project ./AofC_2021/AofC_2021.fsproj -- generate_readme
-        git config --global user.email "jonas.beckeman@gmail.com"
-        git config --global user.name "GitHub Action"
-        git commit README.md -m 'Re-build README.md' || echo "No changes to commit"
-        git push origin || echo "No changes to commit"
-            */
         }
 
         private bool ReplaceSection(string content, string sectionId, string sectionContent, out string contentReplaced)
@@ -45,7 +38,13 @@ namespace Tests
             var types = TypeHelper.GetTypesDerivedFrom(type);
             foreach (var t in types)
             {
-                yield return $"{prefix}* {t.Name}";
+                var result = $"{prefix}* {t.Name}";
+                {
+                    var tmp = XmlDocTools.GetInnerText(XmlDocTools.GetDocumentation(t));
+                    if (!string.IsNullOrEmpty(tmp))
+                        result = $"{result} - [example]({tmp})";
+                }
+                yield return result;
 
                 var interfaceProps = GetInterfaceTypeProperties(t);
                 if (interfaceProps.Any())

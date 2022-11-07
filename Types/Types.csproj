@@ -7,6 +7,7 @@
     <Title>Types and SerializerSettings for AzureMonitorCommonAlertSchema</Title>
     <Authors>JWMB</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Version>0.0.1</Version>
   </PropertyGroup>
 

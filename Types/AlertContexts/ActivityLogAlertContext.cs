@@ -2,6 +2,9 @@
 
 namespace Types.AlertContexts
 {
+    /// <summary>
+    /// https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#monitoringservice--activity-log---administrative
+    /// </summary>
     public class ActivityLogAlertContext : IAlertContext
     {
         public string[] MonitoringServiceMatches => new[] { "Activity Log", "Activity Log - Administrative" };

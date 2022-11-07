@@ -1,6 +1,8 @@
 ﻿namespace Types.AlertContexts
 {
-
+    /// <summary>
+    /// https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#monitoringservice--servicehealth
+    /// </summary>
     public class ResourceHealthAlertContext : HealthContextBase
     {
         public override string[] MonitoringServiceMatches => new[] { "Resource Health" };

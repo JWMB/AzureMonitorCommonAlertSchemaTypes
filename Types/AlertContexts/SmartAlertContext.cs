@@ -2,6 +2,9 @@
 
 namespace Types.AlertContexts
 {
+    /// <summary>
+    /// https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#monitoringservice--servicehealth
+    /// </summary>
     public class SmartAlertContext : IAlertContext
     {
         public string[] MonitoringServiceMatches => new[] { "SmartDetector" };
