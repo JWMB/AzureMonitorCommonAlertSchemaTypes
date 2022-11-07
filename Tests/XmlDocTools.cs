@@ -78,11 +78,12 @@ namespace Tests
 
         public static string GetDirectoryPath(this Assembly assembly)
         {
-            var codeBase = assembly.Location; //.CodeBase;
-            var uri = new UriBuilder(codeBase);
-            var path = Uri.UnescapeDataString(uri.Path);
-            if (path == null)
-                throw new Exception("");
+            var path = assembly.Location;
+            //var codeBase = assembly.CodeBase;
+            //var uri = new UriBuilder(codeBase);
+            //var path = Uri.UnescapeDataString(uri.Path);
+            //if (path == null)
+            //    throw new Exception("");
             return Path.GetDirectoryName(path);
         }
 
