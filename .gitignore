@@ -15,6 +15,7 @@ venv
 **/npm-debug.log:wwq:wq
 
 *.bacpac
+*.pubxml
 
 *.user
 **/gulp.*.log
