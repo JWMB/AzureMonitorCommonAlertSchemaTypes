@@ -24,7 +24,7 @@ if (ctx is Types.AlertContexts.LogAnalyticsAlertContext ctxLogAnalytics)
 }
 ```
 
-Uses [SlackNet](https://github.com/soxtoby/SlackNet) for Slack Message payload types.
+Repo that uses this library in an Azure Function for posting to Slack: [AzureAlerts2Slack](https://github.com/JWMB/AzureAlerts2Slack/blob/main/AlertInfo.cs) 
 
 Related 3rd-party repos
 * [Azure-Monitor-Alerts-To-MsTeams](https://github.com/Brink-Software/Azure-Monitor-Alerts-To-MsTeams)
