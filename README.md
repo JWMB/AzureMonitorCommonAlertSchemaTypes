@@ -15,6 +15,7 @@ See [ActionGroupTests](/Tests/Json/ActionGroupTests) for the payloads generated 
 The respective unit tests can be found in [ActionGroupTests.cs](/Tests/ActionGroupTests.cs)
 
 Example usage in [AzureAlerts2Slack](https://github.com/JWMB/AzureAlerts2Slack/blob/main/AlertInfo.cs)
+or
 ```C#
 var alert = Types.AlertJsonSerializerSettings.DeserializeOrThrow(requestBody);
 if (ctx is Types.AlertContexts.LogAnalyticsAlertContext ctxLogAnalytics)
@@ -22,3 +23,10 @@ if (ctx is Types.AlertContexts.LogAnalyticsAlertContext ctxLogAnalytics)
     Console.Log($"{alert.Data.Essentials.AlertRule} - tables:{string.Join(", ", ctxLogAnalytics.SearchResults.Tables.Select(o => o.Name))}");
 }
 ```
+
+Uses [SlackNet](https://github.com/soxtoby/SlackNet) for Slack Message payload types.
+
+Related 3rd-party repos
+* [Azure-Monitor-Alerts-To-MsTeams](https://github.com/Brink-Software/Azure-Monitor-Alerts-To-MsTeams)
+* [Common-Alert-Schema](https://github.com/scautomation/Common-Alert-Schema)
+
