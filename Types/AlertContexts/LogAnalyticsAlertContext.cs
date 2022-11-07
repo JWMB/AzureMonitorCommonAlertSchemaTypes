@@ -62,7 +62,7 @@ namespace Types.AlertContexts
         public long Threshold { get; set; }
 
         [JsonProperty("Operator")]
-        public string Operator { get; set; } = string.Empty;
+        public string Operator { get; set; } = string.Empty; // TODO: Seems this one is using e.g. "Greater Than" rather then "GreaterThan"..?
 
         [JsonProperty("Dimensions")]
         public Dimension[]? Dimensions { get; set; }

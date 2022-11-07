@@ -7,11 +7,13 @@
             switch (Operator)
             {
                 case "GreaterThan":
+                case "Greater Than":
                     return ">";
                 case "GreaterThanOrEqual":
                     return ">=";
                 //case "LessThan":
                 case "LowerThan":
+                case "Lower Than":
                     return "<";
                 //case "LessThanOrEqual":
                 case "LowerThanOrEqual":

@@ -8,8 +8,10 @@ A `.NETStandard 2.1` library with types and serializing utils for [azureMonitorC
 ## Rant
 No type information seems to be provided by Microsoft for handling alert payloads - no JSON Schema and no type libraries. This library is built on guesswork based on various example payloads. Lots of properties are of type `string` in this library, but are probably `enum`s in reality. How can we find out?
 
-Also overall design principles seem lacking. Sometimes properties are camelCase, sometimes PascalCase. Compare ServiceHealthAlertContext with ResourceHealthAlertContext - some properties sound like they should be shared, but the types differ.
-Please get back to the drawing board!
+Also overall design principles seem lacking.
+* Sometimes properties are camelCase, sometimes PascalCase.
+* Compare ServiceHealthAlertContext with ResourceHealthAlertContext - some properties sound like they should be shared, but the types differ. 
+* `GreaterThan` AND `Greater Than` - also `LessThan` AND `Lower Than`..?
 
 ## Supported variations
 ([Auto-generated information](/Tests/GenerateDocumentation.cs))
