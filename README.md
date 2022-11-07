@@ -1,0 +1,2 @@
+# AzureMonitorCommonAlertSchemaTypes
+Library with types and serializing utils for azureMonitorCommonAlertSchema
