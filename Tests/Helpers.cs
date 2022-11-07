@@ -31,17 +31,8 @@ namespace Tests
                 }
                 currentDir = currentDir.Parent;
             }
-            //var binSearch = $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}";
-            //var index = currentDir.FullName.LastIndexOf(binSearch);
-            //if (index > 0)
-            //{
-            //    var joined = Path.Join(currentDir.FullName.Remove(index), filename);
-            //    if (File.Exists(joined))
-            //        return joined;
-            //    throw new FileNotFoundException($"{filename} - Current dir:{Directory.GetCurrentDirectory()} (joined:'{joined}')");
-            //}
 
-            throw new FileNotFoundException($"{filename} - Current dir:'{Directory.GetCurrentDirectory()}'"); // (binSearch:'{binSearch}')");
+            throw new FileNotFoundException($"{filename} - Current dir:'{Directory.GetCurrentDirectory()}'");
         }
 
         private static string? GetFullnameIfExists(string filepath, DirectoryInfo dir)
