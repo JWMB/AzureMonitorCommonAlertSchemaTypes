@@ -78,7 +78,8 @@ namespace Tests
 
         public static string? GetDirectoryPath(this Assembly assembly)
         {
-            return Path.GetDirectoryName(assembly.Location);
+            var path = assembly?.Location;
+            return path == null ? null : Path.GetDirectoryName(path);
         }
 
         internal static HashSet<Assembly> loadedAssemblies = new HashSet<Assembly>();
