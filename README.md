@@ -1,7 +1,7 @@
 [![.NET](https://github.com/JWMB/AzureMonitorCommonAlertSchemaTypes/actions/workflows/dotnet.yml/badge.svg)](https://github.com/JWMB/AzureMonitorCommonAlertSchemaTypes/actions/workflows/dotnet.yml)
 
 # AzureMonitorCommonAlertSchemaTypes
-A `.NETStandard 2.1` library with types and serializing utils for [azureMonitorCommonAlertSchema](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-definitions)
+A `.NETStandard 2.0` library with types and serializing utils for [azureMonitorCommonAlertSchema](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-definitions)
 
 *Work in progress*
 
