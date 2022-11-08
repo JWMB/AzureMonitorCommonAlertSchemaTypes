@@ -58,7 +58,7 @@ namespace Tests
             }
         }
 
-        public static string GetDocumentation(this ParameterInfo parameterInfo)
+        public static string? GetDocumentation(this ParameterInfo parameterInfo)
         {
             var memberDocumentation = parameterInfo.Member.GetDocumentation();
             if (memberDocumentation != null)
@@ -76,25 +76,21 @@ namespace Tests
             return null;
         }
 
-        public static string GetDirectoryPath(this Assembly assembly)
+        public static string? GetDirectoryPath(this Assembly assembly)
         {
-            var path = assembly.Location;
-            //var codeBase = assembly.CodeBase;
-            //var uri = new UriBuilder(codeBase);
-            //var path = Uri.UnescapeDataString(uri.Path);
-            //if (path == null)
-            //    throw new Exception("");
-            return Path.GetDirectoryName(path);
+            return Path.GetDirectoryName(assembly.Location);
         }
 
         internal static HashSet<Assembly> loadedAssemblies = new HashSet<Assembly>();
         internal static void LoadXmlDocumentation(Assembly assembly)
         {
             if (loadedAssemblies.Contains(assembly))
-            {
                 return; // Already loaded
-            }
+
             var directoryPath = assembly.GetDirectoryPath();
+            if (directoryPath == null)
+                return;
+
             var xmlFilePath = Path.Combine(directoryPath, assembly.GetName().Name + ".xml");
             if (File.Exists(xmlFilePath))
             {
