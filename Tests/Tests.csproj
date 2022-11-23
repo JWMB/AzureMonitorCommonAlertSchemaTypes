@@ -10,11 +10,12 @@
 
   <ItemGroup>
     <None Remove="Json\ActionGroupTests\Availability test alert.json" />
+    <None Remove="Json\ActionGroupTests\Log alert V1 - Metric.json" />
+    <None Remove="Json\ActionGroupTests\Log alert v2.json" />
     <None Remove="Json\ActionGroupTests\Metric alert - Dynamic threshold.json" />
     <None Remove="Json\ActionGroupTests\Metric alert - Static threshold.json" />
     <None Remove="Json\ActionGroupTests\Resource health alert.json" />
     <None Remove="Json\ActionGroupTests\Service health alert.json" />
-    <None Remove="Json\ActionGroupTests\Smart alert - Copy.json" />
     <None Remove="Json\ActionGroupTests\Smart alert.json" />
     <None Remove="Json\Application Insights - context.json" />
     <None Remove="Json\ActionGroupTests\Activity log alert.json" />
@@ -23,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Json\ActionGroupTests\Log alert V1 - Metric.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Json\ActionGroupTests\Metric alert - Dynamic threshold.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -33,6 +37,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Json\ActionGroupTests\Availability test alert.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Json\ActionGroupTests\Log alert V2.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Json\ActionGroupTests\Smart alert.json">

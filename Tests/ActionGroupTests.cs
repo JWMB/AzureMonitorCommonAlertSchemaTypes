@@ -154,7 +154,52 @@ namespace Tests
             typed.SubmissionTimestamp.ShouldBe(DateTimeOffset.Parse("2022-11-07T14:33:10.068Z"));
         }
 
+        [Fact]
+        public void Deserialize_LogAlertV2()
+        {
+            var alert = GetDeserialized("Log alert V2.json");
 
+            alert.Data.Essentials.SignalType.ShouldBe("Log");
+            alert.Data.Essentials.MonitoringService.ShouldBe("Log Alerts V2");
+
+            alert.Data.AlertContext.ShouldNotBeNull();
+            if (!(alert.Data.AlertContext is LogAlertsV2AlertContext typed))
+                throw new Exception($"Wrong type: {alert.Data.AlertContext.GetType().Name}");
+
+            typed.ConditionType.ShouldBe("LogQueryCriteria");
+
+            typed.Condition.AllOf.ShouldNotBeEmpty();
+            typed.Condition.ToUserFriendlyString().ShouldBe("Heartbeat/MMC: 3 > 0 (16:21:24 UTC:+00:00)");
+
+            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.LogQueryCriteria[] conditions)
+                throw new Exception($"{nameof(typed.Condition.AllOf)} is {typed.Condition.AllOf.GetType().Name}");
+
+            conditions.Single().SearchQuery.ShouldBe("Heartbeat");
+            conditions.Single().LinkToFilteredSearchResultsUi.ShouldNotBeNull();
+            conditions.Single().ToUserFriendlyString().ShouldBe("Heartbeat/MMC: 3 > 0");
+        }
+
+        [Fact]
+        public void Deserialize_LogAlertV1Metric()
+        {
+            var alert = GetDeserialized("Log alert V1 - Metric.json");
+
+            alert.Data.Essentials.SignalType.ShouldBe("Log");
+            alert.Data.Essentials.MonitoringService.ShouldBe("Log Analytics");
+
+            alert.Data.AlertContext.ShouldNotBeNull();
+            if (!(alert.Data.AlertContext is LogAnalyticsAlertContext typed))
+                throw new Exception($"Wrong type: {alert.Data.AlertContext.GetType().Name}");
+
+            typed.SearchQuery.ShouldBe("Heartbeat | summarize AggregatedValue=count() by bin(TimeGenerated, 5m)");
+
+            typed.SearchIntervalStartTimeUtc.ShouldBe(DateTimeOffset.Parse("2022-11-23T16:31:12.512Z"));
+            typed.SearchIntervalEndtimeUtc.ShouldBe(DateTimeOffset.Parse("2022-11-23T16:31:12.512Z"));
+
+            typed.LinkToFilteredSearchResultsUi.ShouldNotBeNull();
+
+            typed.SearchResults.Tables.Single().Columns.Select(o => o.Name).ShouldBe(new[] { "TimeGenerated", "AggregatedValue" });
+        }
 
         private Alert GetDeserialized(string filename)
         {

@@ -24,10 +24,10 @@ namespace Types.AlertContexts
         public string SearchQuery { get; set; } = string.Empty;
 
         [JsonProperty("SearchIntervalStartTimeUtc")]
-        public string SearchIntervalStartTimeUtc { get; set; } = string.Empty;
+        public DateTimeOffset SearchIntervalStartTimeUtc { get; set; }
 
         [JsonProperty("SearchIntervalEndtimeUtc")]
-        public string SearchIntervalEndtimeUtc { get; set; } = string.Empty;
+        public DateTimeOffset SearchIntervalEndtimeUtc { get; set; }
 
         [JsonProperty("ResultCount")]
         public long ResultCount { get; set; }
