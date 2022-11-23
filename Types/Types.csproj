@@ -9,12 +9,14 @@
     <Authors>JWMB</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
+    <PackageProjectUrl>https://github.com/JWMB/AzureMonitorCommonAlertSchemaTypes</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
-	<None Include="..\README.md" Pack="true" PackagePath="\"/>
+	<None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
