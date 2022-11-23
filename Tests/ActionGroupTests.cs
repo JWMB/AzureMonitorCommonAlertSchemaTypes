@@ -1,6 +1,6 @@
 ﻿using Shouldly;
-using Types;
-using Types.AlertContexts;
+using AzureMonitorCommonAlertSchemaTypes;
+using AzureMonitorCommonAlertSchemaTypes.AlertContexts;
 
 namespace Tests
 {
@@ -15,7 +15,7 @@ namespace Tests
             alert.Data.Essentials.MonitoringService.ShouldBe("Activity Log - Administrative");
 
             alert.Data.AlertContext.ShouldNotBeNull();
-            if (!(alert.Data.AlertContext is Types.AlertContexts.ActivityLogAlertContext typed))
+            if (!(alert.Data.AlertContext is AzureMonitorCommonAlertSchemaTypes.AlertContexts.ActivityLogAlertContext typed))
                 throw new Exception($"Wrong type: {alert.Data.AlertContext.GetType().Name}");
 
             typed.Authorization.Action.ShouldBe("Microsoft.Compute/virtualMachines/restart/action");
@@ -43,7 +43,7 @@ namespace Tests
 
             typed.Condition.AllOf.ShouldNotBeEmpty();
 
-            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.WebtestLocationAvailabilityCriteria[] conditions)
+            if (typed.Condition.AllOf is not AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2.WebtestLocationAvailabilityCriteria[] conditions)
                 throw new Exception($"{nameof(typed.Condition.AllOf)} is {typed.Condition.AllOf.GetType().Name}");
 
             conditions.Single().MetricName.ShouldBe("Failed Location");
@@ -68,7 +68,7 @@ namespace Tests
 
             typed.Condition.AllOf.ShouldNotBeEmpty();
 
-            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.SingleResourceMultipleMetricCriteria[] conditions)
+            if (typed.Condition.AllOf is not AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2.SingleResourceMultipleMetricCriteria[] conditions)
                 throw new Exception($"{nameof(typed.Condition.AllOf)} is {typed.Condition.AllOf.GetType().Name}");
 
             conditions.Single().MetricName.ShouldBe("Transactions");
@@ -93,7 +93,7 @@ namespace Tests
 
             typed.Condition.AllOf.ShouldNotBeEmpty();
 
-            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.DynamicThresholdCriteria[] conditions)
+            if (typed.Condition.AllOf is not AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2.DynamicThresholdCriteria[] conditions)
                 throw new Exception($"{nameof(typed.Condition.AllOf)} is {typed.Condition.AllOf.GetType().Name}");
 
             conditions.Single().MetricName.ShouldBe("Transactions");
@@ -171,7 +171,7 @@ namespace Tests
             typed.Condition.AllOf.ShouldNotBeEmpty();
             typed.Condition.ToUserFriendlyString().ShouldBe("Heartbeat/MMC: 3 > 0 (16:21:24 UTC:+00:00)");
 
-            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.LogQueryCriteria[] conditions)
+            if (typed.Condition.AllOf is not AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2.LogQueryCriteria[] conditions)
                 throw new Exception($"{nameof(typed.Condition.AllOf)} is {typed.Condition.AllOf.GetType().Name}");
 
             conditions.Single().SearchQuery.ShouldBe("Heartbeat");

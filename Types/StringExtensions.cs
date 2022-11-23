@@ -1,4 +1,4 @@
-﻿namespace Types
+﻿namespace AzureMonitorCommonAlertSchemaTypes
 {
     public static class StringExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace Types.AlertContexts.LogAlertsV2
+﻿namespace AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2
 {
     public interface IConditionPart
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Types.Serialization
+namespace AzureMonitorCommonAlertSchemaTypes.Serialization
 {
     public class TypeHelper
     {

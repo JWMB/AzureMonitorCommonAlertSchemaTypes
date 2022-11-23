@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace Types.Serialization
+namespace AzureMonitorCommonAlertSchemaTypes.Serialization
 {
     public class AlertJsonSerializerSettings : JsonSerializerSettings
     {

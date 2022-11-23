@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Types.AlertContexts
+namespace AzureMonitorCommonAlertSchemaTypes.AlertContexts
 {
     public abstract class HealthContextBase : IAlertContext
     {

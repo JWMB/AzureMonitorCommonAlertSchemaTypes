@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Shouldly;
-using Types;
-using Types.Serialization;
+using AzureMonitorCommonAlertSchemaTypes;
+using AzureMonitorCommonAlertSchemaTypes.Serialization;
 
 namespace Tests
 {

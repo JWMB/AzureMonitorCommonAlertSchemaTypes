@@ -1,7 +1,7 @@
-using Types;
+using AzureMonitorCommonAlertSchemaTypes;
 using Newtonsoft.Json;
 using Shouldly;
-using Types.Serialization;
+using AzureMonitorCommonAlertSchemaTypes.Serialization;
 using System.Reflection;
 using System.Text.RegularExpressions;
 

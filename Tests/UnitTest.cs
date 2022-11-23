@@ -1,8 +1,8 @@
-using Types;
+using AzureMonitorCommonAlertSchemaTypes;
 using Newtonsoft.Json;
 using Shouldly;
-using Types.AlertContexts;
-using Types.Serialization;
+using AzureMonitorCommonAlertSchemaTypes.AlertContexts;
+using AzureMonitorCommonAlertSchemaTypes.Serialization;
 
 namespace Tests
 {
@@ -43,7 +43,7 @@ namespace Tests
 
             typed.Condition.AllOf.ShouldNotBeEmpty();
 
-            if (typed.Condition.AllOf is not Types.AlertContexts.LogAlertsV2.LogQueryCriteria[] conditions)
+            if (typed.Condition.AllOf is not AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2.LogQueryCriteria[] conditions)
                 throw new Exception($"{nameof(typed.Condition.AllOf)} is {typed.Condition.AllOf.GetType().Name}");
 
             conditions.Single().SearchQuery.ShouldBe("Heartbeat");

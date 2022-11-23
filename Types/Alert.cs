@@ -1,4 +1,4 @@
-﻿namespace Types
+﻿namespace AzureMonitorCommonAlertSchemaTypes
 {
     // TODO: maybe we'd also like some structure like
     //public class Alert<T>

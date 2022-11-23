@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using Newtonsoft.Json.Linq;
 
-namespace Types.Serialization
+namespace AzureMonitorCommonAlertSchemaTypes.Serialization
 {
     public class AlertDataJsonConverter : CovariantConverter<Data, IAlertContext>
     {

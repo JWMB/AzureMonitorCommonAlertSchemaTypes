@@ -77,7 +77,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Types\Types.csproj" />
+    <ProjectReference Include="..\Types\AzureMonitorCommonAlertSchemaTypes.csproj" />
   </ItemGroup>
 
 </Project>

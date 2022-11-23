@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
-using Types.AlertContexts.LogAlertsV2;
+using AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2;
 
-namespace Types.AlertContexts
+namespace AzureMonitorCommonAlertSchemaTypes.AlertContexts
 {
     /// <summary>
     /// https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-test-action-definitions#monitoringservice--log-alerts-v1--metric

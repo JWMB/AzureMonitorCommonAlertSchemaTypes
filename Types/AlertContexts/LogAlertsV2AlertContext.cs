@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Types.AlertContexts.LogAlertsV2;
+using AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2;
 
-namespace Types.AlertContexts
+namespace AzureMonitorCommonAlertSchemaTypes.AlertContexts
 {
     public class LogAlertsV2AlertContext : IAlertContext
     {

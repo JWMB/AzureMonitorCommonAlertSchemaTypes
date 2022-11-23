@@ -9,7 +9,7 @@
     <Authors>JWMB</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <PackageProjectUrl>https://github.com/JWMB/AzureMonitorCommonAlertSchemaTypes</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

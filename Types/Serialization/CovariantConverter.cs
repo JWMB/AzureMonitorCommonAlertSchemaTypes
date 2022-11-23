@@ -5,7 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace Types.Serialization
+namespace AzureMonitorCommonAlertSchemaTypes.Serialization
 {
     public abstract class CovariantConverter<TAncestorWithCovariantTypeId, TVariant> : JsonConverter<TAncestorWithCovariantTypeId>
     {

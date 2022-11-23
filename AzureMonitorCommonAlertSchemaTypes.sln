@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Types", "Types\Types.csproj", "{C31A7AEE-9426-4771-84B7-7A0D6EB1350E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureMonitorCommonAlertSchemaTypes", "Types\AzureMonitorCommonAlertSchemaTypes.csproj", "{C31A7AEE-9426-4771-84B7-7A0D6EB1350E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{F78656BB-1678-494B-B9EF-FD6C9E47F7C5}"
 EndProject

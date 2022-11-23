@@ -2,10 +2,10 @@
 using System;
 using Newtonsoft.Json.Linq;
 using System.Linq;
-using Types.AlertContexts.LogAlertsV2;
-using Types.AlertContexts;
+using AzureMonitorCommonAlertSchemaTypes.AlertContexts.LogAlertsV2;
+using AzureMonitorCommonAlertSchemaTypes.AlertContexts;
 
-namespace Types.Serialization
+namespace AzureMonitorCommonAlertSchemaTypes.Serialization
 {
     public class ConditionPartJsonConverter : CovariantConverter<LogAlertsV2AlertContext, IConditionPart[]>
     {
