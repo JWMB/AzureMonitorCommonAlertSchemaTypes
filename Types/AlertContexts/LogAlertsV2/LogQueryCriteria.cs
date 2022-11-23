@@ -38,7 +38,7 @@ namespace Types.AlertContexts.LogAlertsV2
         public string OperatorToken => OperatorValues.Get(Operator);
         public string ToUserFriendlyString()
         {
-            return $"{SearchQuery}/{MetricMeasureColumn}: {MetricValue} {OperatorToken} {Threshold}";
+            return $"{SearchQuery.NullOrEmptyDefault("SQ")}/{MetricMeasureColumn.NullOrEmptyDefault("MMC")}: {MetricValue} {OperatorToken} {Threshold}";
         }
     }
 }

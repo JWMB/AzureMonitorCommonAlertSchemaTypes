@@ -48,7 +48,8 @@ namespace Tests
 
             conditions.Single().SearchQuery.ShouldBe("Heartbeat");
             conditions.Single().Dimensions!.Single().Name.ShouldBe("Computer");
-
+            conditions.Single().MetricMeasureColumn.ShouldBe("CounterValue");
+            
             typed.Condition.ToUserFriendlyString().ShouldBe("Heartbeat/CounterValue: 0 < 1 (07/07 13:54:34 - 09/07 13:54:34 UTC:+00:00)");
         }
 

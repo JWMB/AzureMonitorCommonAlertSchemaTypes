@@ -6,7 +6,9 @@ namespace Types.AlertContexts.LogAlertsV2
     {
         public abstract string[] ConditionTypeMatch { get; }
 
-        public virtual string ToUserFriendlyString() => $"{MetricName}: {MetricValue.ToString(CultureInfo.InvariantCulture)} {OperatorToken} {Threshold}";
+        public virtual string ToUserFriendlyString() => $"{MetricName}: {MetricOperatorThresholdString()}";
+
+        public string MetricOperatorThresholdString() => $"{MetricValue.ToString(CultureInfo.InvariantCulture)} {OperatorToken} {Threshold}";
 
         public string MetricName { get; set; } = string.Empty;
         public string MetricNamespace { get; set; } = string.Empty;

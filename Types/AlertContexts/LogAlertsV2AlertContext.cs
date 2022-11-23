@@ -21,8 +21,8 @@ namespace Types.AlertContexts
         {
             return Condition.ToUserFriendlyString();
         }
-
     }
+
     public class Condition
     {
         public string WindowSize { get; set; } = string.Empty;
