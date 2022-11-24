@@ -57,10 +57,10 @@ namespace Tests
 
             public void ActivityLogAlertContext(Alert alert, ActivityLogAlertContext ctx) => Received.Add("ActivityLogAlertContext");
             public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx) => Received.Add("LogAlertsV2AlertContext");
-            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, DynamicThresholdCriteria criteria) => Received.Add("LogAlertsV2AlertContext/DynamicThresholdCriteria");
-            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, LogQueryCriteria criteria) => Received.Add("LogAlertsV2AlertContext/LogQueryCriteria");
-            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, SingleResourceMultipleMetricCriteria criteria) => Received.Add("LogAlertsV2AlertContext/SingleResourceMultipleMetricCriteria");
-            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, WebtestLocationAvailabilityCriteria criteria) => Received.Add("LogAlertsV2AlertContext/WebtestLocationAvailabilityCriteria");
+            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, DynamicThresholdCriteria[] criteria) => Received.Add("LogAlertsV2AlertContext/DynamicThresholdCriteria");
+            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, LogQueryCriteria[] criteria) => Received.Add("LogAlertsV2AlertContext/LogQueryCriteria");
+            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, SingleResourceMultipleMetricCriteria[] criteria) => Received.Add("LogAlertsV2AlertContext/SingleResourceMultipleMetricCriteria");
+            public void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, WebtestLocationAvailabilityCriteria[] criteria) => Received.Add("LogAlertsV2AlertContext/WebtestLocationAvailabilityCriteria");
             public void LogAnalyticsAlertContext(Alert alert, LogAnalyticsAlertContext ctx) => Received.Add("LogAnalyticsAlertContext");
             public void ResourceHealthAlertContext(Alert alert, ResourceHealthAlertContext ctx) => Received.Add("ResourceHealthAlertContext");
             public void ServiceHealthAlertContext(Alert alert, ServiceHealthAlertContext ctx) => Received.Add("ServiceHealthAlertContext");

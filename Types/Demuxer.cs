@@ -33,13 +33,13 @@ namespace AzureMonitorCommonAlertSchemaTypes
                 if (one == null)
                     demuxed.LogAlertsV2AlertContext(alert, lav2);
                 else if (one is DynamicThresholdCriteria dt)
-                    demuxed.LogAlertsV2AlertContext(alert, lav2, dt);
+                    demuxed.LogAlertsV2AlertContext(alert, lav2, lav2.Condition.AllOf.Cast<DynamicThresholdCriteria>().ToArray());
                 else if (one is LogQueryCriteria lq)
-                    demuxed.LogAlertsV2AlertContext(alert, lav2, lq);
+                    demuxed.LogAlertsV2AlertContext(alert, lav2, lav2.Condition.AllOf.Cast<LogQueryCriteria>().ToArray());
                 else if (one is SingleResourceMultipleMetricCriteria sr)
-                    demuxed.LogAlertsV2AlertContext(alert, lav2, sr);
+                    demuxed.LogAlertsV2AlertContext(alert, lav2, lav2.Condition.AllOf.Cast<SingleResourceMultipleMetricCriteria>().ToArray());
                 else if (one is WebtestLocationAvailabilityCriteria wl)
-                    demuxed.LogAlertsV2AlertContext(alert, lav2, wl);
+                    demuxed.LogAlertsV2AlertContext(alert, lav2, lav2.Condition.AllOf.Cast<WebtestLocationAvailabilityCriteria>().ToArray());
                 else
                     throw new NotImplementedException($"{one.GetType().Name}");
             }
@@ -71,10 +71,10 @@ namespace AzureMonitorCommonAlertSchemaTypes
         void SmartAlertContext(Alert alert, SmartAlertContext ctx);
 
         void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx);
-        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, DynamicThresholdCriteria criteria);
-        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, LogQueryCriteria criteria);
-        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, SingleResourceMultipleMetricCriteria criteria);
-        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, WebtestLocationAvailabilityCriteria criteria);
+        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, DynamicThresholdCriteria[] criteria);
+        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, LogQueryCriteria[] criteria);
+        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, SingleResourceMultipleMetricCriteria[] criteria);
+        void LogAlertsV2AlertContext(Alert alert, LogAlertsV2AlertContext ctx, WebtestLocationAvailabilityCriteria[] criteria);
     }
 
 }
