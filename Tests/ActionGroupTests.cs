@@ -35,6 +35,8 @@ namespace Tests
             alert.Data.Essentials.SignalType.ShouldBe("Metric");
             alert.Data.Essentials.MonitoringService.ShouldBe("Platform");
 
+            alert.Data.CustomProperties!.Count().ShouldBe(2);
+
             alert.Data.AlertContext.ShouldNotBeNull();
             if (!(alert.Data.AlertContext is LogAlertsV2AlertContext typed))
                 throw new Exception($"Wrong type: {alert.Data.AlertContext.GetType().Name}");
@@ -60,6 +62,8 @@ namespace Tests
             alert.Data.Essentials.SignalType.ShouldBe("Metric");
             alert.Data.Essentials.MonitoringService.ShouldBe("Platform");
 
+            alert.Data.CustomProperties!.Count().ShouldBe(2);
+
             alert.Data.AlertContext.ShouldNotBeNull();
             if (!(alert.Data.AlertContext is LogAlertsV2AlertContext typed))
                 throw new Exception($"Wrong type: {alert.Data.AlertContext.GetType().Name}");
@@ -84,6 +88,8 @@ namespace Tests
 
             alert.Data.Essentials.SignalType.ShouldBe("Metric");
             alert.Data.Essentials.MonitoringService.ShouldBe("Platform");
+
+            alert.Data.CustomProperties!.Count().ShouldBe(2);
 
             alert.Data.AlertContext.ShouldNotBeNull();
             if (!(alert.Data.AlertContext is LogAlertsV2AlertContext typed))
