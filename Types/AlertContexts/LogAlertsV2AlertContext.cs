@@ -17,10 +17,7 @@ namespace AzureMonitorCommonAlertSchemaTypes.AlertContexts
 
         public Condition Condition { get; set; } = new Condition();
 
-        public string ToUserFriendlyString()
-        {
-            return Condition.ToUserFriendlyString();
-        }
+        public string ToUserFriendlyString() => Condition.ToUserFriendlyString();
     }
 
     public class Condition
@@ -35,7 +32,7 @@ namespace AzureMonitorCommonAlertSchemaTypes.AlertContexts
 
         public string ToUserFriendlyString()
         {
-            return $"{string.Join(", ", AllOf.Select(o => o.ToUserFriendlyString()))} ({GetUserFriendlyTimeWindowString()})";
+            return $"{(AllOf?.Any() == true ? string.Join(", ", AllOf.Select(o => o.ToUserFriendlyString())): "")} ({GetUserFriendlyTimeWindowString()})";
         }
 
         public string GetUserFriendlyTimeWindowString()
